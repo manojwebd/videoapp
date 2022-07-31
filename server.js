@@ -8,7 +8,13 @@ const credentials= {key: fs.readFileSync("server.key"),
       cert: fs.readFileSync("server.crt")}
 
 const httpsServer = https.createServer(credentials, app);*/
-
+app.use(function (req, res, next) {
+      res.setHeader('Access-Control-Allow-Origin', '*');
+      res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+      res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+      res.setHeader('Access-Control-Allow-Credentials', true);
+      next();
+});
 const { v4: uuidv4 } = require("uuid");
 const room_id = uuidv4();
 app.set("view engine", "ejs");
