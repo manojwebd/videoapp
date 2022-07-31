@@ -28,7 +28,7 @@ const user = prompt("Enter your name");
 var peer = new Peer(undefined, {
   path: "/peerjs",
   host: "/",
-  port: "3030",
+  port: "",
 });
 
 let myVideoStream;
@@ -158,7 +158,7 @@ socket.on("join-room", (roomid, id,userName) => {
 });
  
 //${moment(message.time).fromNow()}
-/*$(window).on('beforeunload', function () {
+$(window).on('beforeunload', function () {
      source.close();
-});*/
+});
 
