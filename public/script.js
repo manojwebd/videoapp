@@ -158,7 +158,10 @@ socket.on("join-room", (roomid, id,userName) => {
 });
  
 //${moment(message.time).fromNow()}
-$(window).on('beforeunload', function () {
+window.onbeforeunload = function () {
+    socket.close();
+};
+/*$(window).on('beforeunload', function () {
      source.close();
-});
+});*/
 
