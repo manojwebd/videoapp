@@ -46,18 +46,17 @@
   justify-content: center;
   align-items: center; width: 100%;
   background-color: var(--main-dark);
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   position: relative;
 }
 
-video { 
-  border-radius: 1rem; 
-  margin: 0.5rem;
-  flex: 1; flex-grow: 1; min-width: 400px; background-color: #333;
-  display: flex;
+video {  
+  margin:1px;
+  flex: 1; flex-grow: 1; background-color: #333;
+  display: flex;  border-radius:5px; 
   align-items: center;
   justify-content: center;
-  min-height: 250px;
+  min-height: 100px; min-width: 120px; width:100%;
   border: 1px solid green;
   object-fit: cover;
   transform: rotateY(180deg);
@@ -65,22 +64,25 @@ video {
   -moz-transform: rotateY(180deg);
 }
 .localcam { 
-  border: 2px solid blue;
+  border:1px solid blue;
   position: absolute;
-  z-index: 99999;
-  min-width: 134px;
+  z-index: 999;
+  min-width: 104px;
   width: 95px;
-  top: 64px;
-  left: 0px; 
+  min-height: 75px;
+  top: 4px;
+  left: 0px;  border-radius: 1rem; 
 }
 .options {
   position: fixed;
   bottom: 0px;
-  left: 0px;
-  min-width: 60%;
+  left: auto;
+  min-width: 65%;
   padding:8px 1rem;
   display: flex; flex: 1;
   background-color: var(--main-darklgt);
+  align-self: center; 
+  border-radius:10px;
 }
 
 .options__left {
@@ -191,7 +193,8 @@ video {
   color: #fff;
 }
 
-@media (max-width: 700px) {
+@media (max-width:600px) {
+  .options { width:97vw;}
   .main__right {
     display: none;
   }
@@ -202,10 +205,31 @@ video {
 
   video {
     height: auto;
-    width: 100%;
+    width: 96%;
+    border:2px salmon solid;
   }
 
   #showChat {
     display: flex;
   }
+}
+
+@media screen and (min-width: 1000px) {
+    
+  video {
+    min-height:auto;
+    width:98%;
+    min-width:350px;  max-width:480px;
+    border: 2px orange solid;
+  } 
+}
+@media screen and (min-width: 1500px) {
+      
+  video {
+    min-height:auto;
+    width:98%;
+    min-width:350px;  max-width:580px;
+    border: 2px pink solid;
+  }
+ 
 }
