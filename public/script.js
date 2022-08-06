@@ -34,7 +34,7 @@ var peer = new Peer(undefined, {
 let myVideoStream;
 navigator.mediaDevices
   .getUserMedia({
-    audio: false,
+    audio: true,
     video: true,
   })
   .then((stream) => {
