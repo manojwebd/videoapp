@@ -44,7 +44,7 @@ navigator.mediaDevices
     peer.on("call", (call) => {
       call.answer(stream);
       const video = document.createElement("video"); 
-      video.setAttribute("id", "vlocalcam");
+      //video.setAttribute("id", "vlocalcam");
       myVideo.classList.add('localcam');
       call.on("stream", (userVideoStream) => { 
         addVideoStream(video, userVideoStream);
@@ -60,7 +60,7 @@ const connectToNewUser = (userId, stream) => {
   const call = peer.call(userId, stream);
    
   const video = document.createElement("video");
-  video.setAttribute("id", "v"+userId);
+  //video.setAttribute("id", "v"+userId);
   call.on("stream", (userVideoStream) => {
     //myVideo.classList.add('localcam');
     //console.log('user',userVideoStream);
